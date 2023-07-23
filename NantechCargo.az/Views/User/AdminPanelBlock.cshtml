@@ -1,0 +1,141 @@
+﻿@*@{
+    Layout = "/Views/shared/LoginLayout.cshtml";
+}*@
+
+@{
+    Layout = "/Views/shared/NavbarBottom.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using System.Security.Claims;
+@using NantechCargo.az.Models;
+@model List<User>
+
+<html>
+    <head>
+
+    <link href="~/css/usercss/loginmain.css" rel="stylesheet" />
+    <link href="~/css/usercss/navbarbottom.css" rel="stylesheet" />
+    <link href="~/css/usercss/adminpanelblock.css" rel="stylesheet" />
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            .inactive td a:hover{
+                color:hotpink
+            }
+            .inactive td a {
+                text-decoration: none;
+                color: black;
+            }
+
+        .RoleStatus{
+            text-align:center;
+            display:flex;
+            position:absolute;
+            top:20%;
+            left:20%;
+            width:30%;
+            height:20vh;
+            background-color:red;
+        }
+
+        .Yaridiv{
+            width:50%;
+            height:20vh;
+            background-color:blue;
+        }
+
+        .Yaridiv2 {
+            width: 50%;
+            height: 20vh;
+            background-color: brown;
+        }
+        </style>
+    </head>
+    <body>
+    <div class="page">
+        <div class="content">
+            <div class="header">
+                <div class="title"><span class="name">Kullanıcılar</span>(<b class="count">@Model.Count()</b>)</div>
+            </div>
+            <div class="dataTable">
+                <form action="/User/AdminPanelBlock" method="post">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>İsim</th>
+                                <th>Kullanıcı Adı</th>
+                                <th>E-posta</th>
+                                <th>Fin</th>
+                                <th>Rol</th>
+                                <th>Sil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="inactive">
+                                    <td>@item.UserId</td>
+                                    <td>@item.UserFirstName</td>
+                                    <td>@item.UserLastName</td>
+                                    <td>@item.UserEmail</td>
+                                    <td>@item.UserFin</td>
+                                    <td class="OpenStatus" data-userid="@item.UserId">@item.UserStatus.StatusName</td>
+                                    <td><a href="/User/Delete/@item.UserId">Sil</a></td>
+                                </tr>
+                                <tr class="RoleStatus" style="display: grid;">
+                                    <td >
+                                        <div class="Yaridiv">
+                                            <h2>@item.UserStatus.StatusName</h2>
+                                        </div>
+                                        <div class="Yaridiv2">
+                                    <select >
+                                                <select>
+                                                  
+                                                </select>
+                                            </select>
+                                    </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            $(".RoleStatus").hide();
+            var prevSelectedRoleStatus = null;
+
+            $(".OpenStatus").click(function () {
+                var currentRoleStatus = $(this).closest("tr").next(".RoleStatus");
+
+                if (prevSelectedRoleStatus && prevSelectedRoleStatus[0] !== currentRoleStatus[0]) {
+                    prevSelectedRoleStatus.hide();
+                }
+
+                currentRoleStatus.toggle();
+                prevSelectedRoleStatus = currentRoleStatus;
+            });
+
+            $("select[name='UserId']").change(function () {
+                var newRoleId = $(this).val();
+                var newRoleStatus = $(this).find("option:selected").text();
+
+                // AJAX veya form gönderimiyle SQL kaydını güncelle
+
+                // Başarılı ise görsel güncellemeleri yap
+                
+            });
+        });
+    </script>
+
+    </body>
+    </html>

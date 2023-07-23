@@ -1,0 +1,141 @@
+﻿@{
+    Layout = "/Views/shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abbas Uddin</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&family=Raleway:wght@100;200;300;400;500&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+   <style>
+        body {
+            font-family: 'Josefin Sans',sans-serif;
+        }
+
+        .hepsi {
+            background-color: #f6f6f6;
+        
+        }
+     
+        .faq container{
+        
+        background-color:red;
+        margin-top:10%;
+        }
+        .faq_header-title {
+            font-size: 24px;
+            color: black;
+            margin-bottom: 30px;
+        }
+
+        .faq__panel {
+            padding: 7px 21px;
+            margin-bottom: 24px;
+            border: 1px solid #777e91;
+            border-radius: 7px;
+        }
+
+        .faq__label {
+            padding-block: 7px;
+            color: black;
+            cursor: pointer;
+        }
+
+        .faq__panel-answer {
+            color: #777e91;
+            padding-top: 5px;
+            padding-bottom: 7px;
+        }
+
+   </style>
+</head>
+<body>
+    <section class="faq container hepsi" aria-level="Frequently Asked Questions">
+        <header class="faq_header">
+            <h2 class="faq_header-title" style="text-align:center; font-weight:800;">Suallar & Cavablar</h2>
+        </header>
+        <div class="faq__body">
+            <details aria-expanded="true" class="faq__panel" >
+                <summary class="faq__label"> TaxiGO Nədir? </summary>
+                <div class="faq__panel-body">
+                    <p class="faq__panel-answer">TaxiGO xidmətindən istifadə edərək təhvil məntəqəsində olan bağlamalarınızı sürətli şəkildə, maksimum 1 saat ərzində əldə edə bilərsiniz. Sorğu göndərdiyiniz an etibarı ilə bağlamalarınız filial əməkdaşları tərəfindən Bolt, Uber, Yango və s taxi xidmətləri ilə təcili sizə göndərilir.</p>
+                </div>
+            </details>
+            <details aria-expanded="true" class="faq__panel">
+                <summary class="faq__label"> Trendyoldan necə qeydiyyatdan keçmək olar? (Video Təlimat) </summary>
+                <div class="faq__panel-body">
+                    <p class="faq__panel-answer">Trendyol.com-da qeydiyyatdan keçmək üçün Trendyol saytında və yaxud mobil tətbiqində Expargo tərəfindən sizə verilmiş ünvanı və telefon nömrəsini qeyd edərək qeydiyyatdan keçə bilərsiniz. Trendyol tərəfindən göndərilən SMS onay kodunu Expargo tətbiqindən əldə edə bilərsiniz. </p>
+                </div>
+            </details>
+            <details aria-expanded="true" class="faq__panel">
+                <summary class="faq__label"> Kargo necə hesablanır? </summary>
+                <div class="faq__panel-body">
+                    <p class="faq__panel-answer">
+                        8 May, Mərkəz, Gənclik, Nərimanov, Əhmədli, 20 Yanvar, İnşaatçılar, Bakıxanov, Neftçilər Bravo, Həzi Aslanov, Xırdalan və Sumqayıt təhvil məntəqələri xaric digər təhvil məntəqələrinə 10% ölkədaxili çatdırılma xərci ümümi tarifə əlavə olunur.
+
+                        Türkiyədən olan bağlamalar sadəcə fiziki çəkisinə görə hesablanır.
+
+                        Amerikadan ölçüsü 100 sm-dən böyük olan bağlamaların daşınma haqqı həm həcm,  həm də fiziki çəki əsasında hesablanır və alınan göstəricilərdən böyük olanı daşınma haqqının hesablanması üçün əsas çəki kimi qəbul edilir.
+
+                        Fiziki çəki – Bağlamanın qablaşdırılmış vəziyyətdə tərəzidə görünən çəkisidir;
+                        Həcm çəkisi – Bağlamanın ölçüləri əsasında hesablanan çəkidir.
+
+                        Beynəlxalq Hava Nəqliyyatı Assosiasiyasının (IATA) qaydalarına əsasən Hava Nəqliyyatı ilə daşınılan yüklərin həm həcm həmdə fiziki çəkisi hesablanmalıdır və alınan göstəricilərdən böyük olanı daşınma haqqının hesablanması üçün əsas çəki kimi qəbul edilməlidir.
+
+
+                        Həcm çəkisinin Beynəlxalq Hesablama Qaydalarına uyğun olaraq hesablanma formulu aşağıdakı kimidir: (En x Uzunluq x Hündürlük)/6000 = Həcm çəkisi (kg)
+
+
+                        Yekun hesablaşmalar USD/AZN məzənnəsinə müvafiq olaraq aparılır.
+                    </p>
+                </div>
+            </details>
+            <details aria-expanded="true" class="faq__panel" >
+                <summary class="faq__label"> Eynicinsli məhsullardan neçə ədəd gətirə bilərəm?  </summary>
+                <div class="faq__panel-body">
+                    <p class="faq__panel-answer">
+                        Limiti keçmədiyiniz təqdirdə istənilən sayda bağlama gətirə bilərsiniz. Qeyd edək ki, ay ərzində 2 ədəddən artıq eynicinsli məhsul sifariş etdiyiniz zaman satış məqsədli olub-olmamasının təyin edilməsi məqsədi ilə  gömrük tərəfindən saxlanıla bilər. Satış məqsədli olduğu təqdirdə rüsuma cəlb ediləcəkdir. Əgər, siz şəxsi istifadə üçün sifariş edirsinizsə, bunu bağlamanız saxlanıldığı təqdirdə gömrük orqanlarına bildirə bilərsiniz.
+                    </p>
+                </div>
+            </details>
+            <details aria-expanded="true" class="faq__panel" >
+                <summary class="faq__label">  Bağlama qırıq və ya zədəli gəldiyi halda nə etməliyəm?  </summary>
+                <div class="faq__panel-body">
+                    <p class="faq__panel-answer">
+                        Yolda zədələnən və ya hər hansı zərər görən bağlamalara görə məsuliyyət daşımırıq. Bağlamaların zərər görməyəcək şəkildə qablaşdırılmasına görə satıcı mağaza cavabdehdir.
+                    </p>
+                </div>
+            </details>
+            <details aria-expanded="true" class="faq__panel" >
+                <summary class="faq__label">  Nə zaman bəyan etməliyəm?  </summary>
+                <div class="faq__panel-body">
+                    <p class="faq__panel-answer">Xarici anbara çatan bağlamalar üzərində faktura olub olmadığı yoxlanılır. Əgər faktura yoxdursa, müştəridən sifarişin icmalı olan screenshot və bağlamanın dəyərinin yazılmasına dair bildiriş gedir. Faktura əlavə edildikdən sonra müvafiq Tracking nömrə ilə Smart Customs mobil tətbiqində və ya e.customs.gov.az saytında bəyan etmək lazımdır. Fakturası olmayan və məbləğ yazılmayan bağlamaların bəyan edilməsi mümkün olmayacaqdır..</p>
+                </div>
+            </details>
+            <details aria-expanded="true" class="faq__panel" >
+                <summary class="faq__label">  Korporativ müştərilər necə müraciət etməlidir?  </summary>
+                <div class="faq__panel-body">
+                    <p class="faq__panel-answer">Expargo Ana Səhifədə Korporativ sözünü seçib, verilən müraciət formasını dolduraraq bizə sorğu göndərə bilərsiniz. </p>
+                </div>
+            </details>
+                <details aria-expanded="true" class="faq__panel" >
+                    <summary class="faq__label">  Sizinlə necə əlaqə saxlamaq olar?  </summary>
+                    <div class="faq__panel-body">
+                        <p class="faq__panel-answer">
+                            Saytımızda Müraciət yaradaraq, bizə e-mail yazaraq (info@expargo.com) Instagram, Facebook sosial media vasitəsilə və qaynar xəttimiz ilə bizimlə əlaqə saxlaya bilərsiniz.
+
+                        </p>
+                    </div>
+
+                </details>
+        </div>
+
+    </section>
+
+</body>
+</html>

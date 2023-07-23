@@ -1,0 +1,77 @@
+﻿
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="~/css/usercss/loginmain.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+
+<div class="mainrightdiv container">
+    <div class="daxilol__">
+        <div class="daxilollltaxt">
+            <span><a href="/User/Login"><i class="fa-solid fa-angle-left"></a></i>Daxil Ol</span>
+        </div>
+    </div>
+    <div class="title">Qeydiyyat</div>
+    <form action="/User/LoginRegistration" method="post">
+        <div class="user_details">
+            <div class="input_pox">
+                <span class="datails">Ad</span>
+                <input type="text" placeholder="enter your name" required name="UserFirstName"> 
+            </div>
+            <div class="input_pox">
+                <span class="datails">Soyad</span>
+                <input type="text" placeholder="enter your Username" required name="UserLastName">
+            </div>
+            <div class="input_pox">
+                <span class="datails">E-mail</span>
+                <input type="email" placeholder="enter your Email" required name="UserEmail">
+            </div>
+            <div class="input_pox">
+                <span class="datails">User Birth Day </span>
+                <input type="text" placeholder="enter your Phone" required name="UserBirthDay">
+            </div>
+       
+            <div class="input_pox">
+                <span class="datails">Sifre</span>
+                <input type="password" placeholder="enter your Password" required name="UserPassword">
+            </div>
+
+            <div class="input_pox">
+                <span class="datails">Unvan</span>
+                <input type="text" placeholder="Minimum 15 simvol" required name="UserAddress">
+            </div>
+           
+            <div class="input_pox">
+                <span class="datails">Fin kod</span>
+                <input type="text" placeholder="enter your Phone" required name="UserFin">
+            </div>
+         
+            <div class="input_pox">
+                <input type="file" placeholder="UserPhoto" required name="UserPhoto">
+            </div>
+        </div>
+        <div class="gender_details">
+            <input type="radio" name="gender" id="dot-1">
+
+            <div class="category">
+                <label for="dot-1">
+                    <span class="dot one"></span>
+                    <span class="gender"> Qeydiyyatdan keçərək istifadəçi qaydaları ilə razılaşıram. </span>
+                </label>
+            </div>
+        </div>
+        <div class="button">
+            <input type="submit" value="Register">
+            <a href="/User/Login">Qeydiyyatim var</a>
+
+        </div>
+    </form>
+</div>

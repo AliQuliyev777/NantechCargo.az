@@ -1,0 +1,238 @@
+﻿@using System.Security.Claims;
+
+
+
+
+
+<div class="adminpanelleft">
+    <div class="imgadminpanel1">
+    </div>
+               @*   @if(User.Identity.IsAuthenticated)
+                {*@
+    <div class="adminpanelullia">
+        <div class="esassehifeadminpanel">
+            <ul>
+            @*        @if (@User.FindFirst(ClaimTypes.Role).Value == "1")
+                {*@
+
+                        <li>
+                            <a href="/User/AdminPanelBlock"><i class="fa-solid fa-user-slash"></i>Admin User Block</a>
+                        </li>
+
+                        <li>
+                           <a href="/Operator/Orders"><i class="fa-solid fa-car"></i>Orders</a>
+                       </li>
+
+            @*    }
+                    @if (@User.FindFirst(ClaimTypes.Role).Value == "2" || @User.FindFirst(ClaimTypes.Role).Value == "3")
+                    {*@
+                        <li>
+                            <a href="/User/DashboardHome"><i class="fa-solid fa-house-user" style="color: #000000;"></i>Əsas səhifə</a>
+                        </li>
+                        <li>
+                            <a href="/User/Sifarislerim"><i class="fa-brands fa-shopify"></i>Sifarişlər</a>
+                        </li>
+                        <li>
+                            <a href="/User/UserNotification"><i class="fa-solid fa-bell"></i>Bildirişlər</a>
+                        </li>
+                        <li>
+                            <a href="/User/UserId"><i class="fa-regular fa-user"></i>Profil</a>
+                        </li>
+                        <li>
+                            <a href="/User/Baglamalarizleme"><i class="fa-solid fa-truck"></i>Baglamalar izleme</a>
+                        </li>
+                @*}*@
+            </ul>
+        </div>
+    </div>
+   @*     @if (@User.FindFirst(ClaimTypes.Role).Value == "2" || @User.FindFirst(ClaimTypes.Role).Value == "3")
+        {*@
+    <div class="adminpanelbutton">
+        <span><a href="/User/NewOrder" class="button">Sifaris Et</a></span>
+    </div>
+        @*}*@
+    <div class="adminpanelbutton2">
+        <a href="/User/Cixis">Cixis Et</a>
+    </div>
+                @*}*@
+</div>
+
+
+
+
+@RenderBody()
+
+<html>
+
+    <head>
+    <link href="~/css/usercss/navbarbottom.css" rel="stylesheet" />
+    <link href="~/css/usercss/expargologin.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+    <body>
+    <div class="background-fader"></div>
+    <nav>
+        <header>
+            <i class="fa fa-bars fa-2x nav-toggle" aria-hidden="true"></i>
+            <span id="nav-brand"></span>
+
+            <div class="nav-menu">
+                <ul>
+                    <li>Settings</li>
+                    <li>Help</li>
+                </ul>
+            </div>
+        </header>
+        <div class="side-navbar">
+            <i class="fa fa-times fa-2x nav-toggle" aria-hidden="true"></i>
+            <ul>
+                
+                @if(User.Identity.IsAuthenticated)
+                {
+                    @if (@User.FindFirst(ClaimTypes.Role).Value == "1")
+                    {
+                <li>
+                    <a href="/User/AdminPanelBlock">Admin User Block</a>
+                </li>
+                        <li>
+                            <a href="/Operator/Orders"><i class="fa-solid fa-car"></i>Orders</a>
+                        </li>
+                        
+                    }
+                 
+                    @if (@User.FindFirst(ClaimTypes.Role).Value == "3")
+                    {
+                        <li>
+                            <a href="/User/UserId">Profil</a>
+                        </li>
+
+                        <li>
+                            <a href="/User/DashboardHome">Əsas səhifə</a>
+                        </li>
+                        <li>
+                            <a href="/User/Sifarislerim">Sifarişlər</a>
+                        </li>
+       
+                        <li>
+                            <a href="/User/UserNotification">Bildirişlər</a>
+                        </li>
+                        <li>
+                            <a href="/User/Baglamalarizleme">Baglamalar izleme</a>
+                        </li>
+                        <li>
+                            <a href="/Operator/Orders">Orders</a>
+                        </li>
+                        <li>
+                            <a href="/User/NewOrder" >Sifaris Et</a>
+                        </li>
+
+                    }
+                    @if (@User.Identity.IsAuthenticated)
+                    {
+                        <li class="adminpanelbutton2">
+                            <a href="/User/Cixis">Cixis Et</a>
+                        </li>
+                    }
+                }
+
+            </ul>
+        </div>
+    </nav>
+
+</body>
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+
+<script>
+    const tabs = document.querySelector('.tabs');
+    const tabButtons = document.querySelectorAll('[role="tab"]');
+    const tabPanels = document.querySelectorAll('[role="tabpanel"]');
+
+    // handle click
+    function handleClick(e) {
+        tabPanels.forEach(tabPanel => {
+            tabPanel.hidden = true;
+            tabPanel.classList.remove('active');
+        });
+
+        tabButtons.forEach(tabButton => {
+            tabButton.setAttribute('aria-selected', 'false');
+        });
+        e.currentTarget.setAttribute('aria-selected', 'true');
+
+        const { id } = e.currentTarget;
+
+        const tabPanel = tabs.querySelector(`[aria-labelledby="${id}"]`);
+        tabPanel.hidden = false;
+        tabPanel.classList.add('active');
+
+        const label = e.currentTarget.querySelector('.label');
+        console.log(label.offsetWidth);
+    }
+
+    tabButtons.forEach(tabButton => {
+        tabButton.addEventListener('click', handleClick);
+    });
+
+
+
+
+
+        // Sayfa yüklendiğinde etkin sayfayı belirleme
+        document.addEventListener("DOMContentLoaded", function () {
+            var currentPath = window.location.pathname;
+            var menuItems = document.querySelectorAll(".adminpanelleft .esassehifeadminpanel ul li a");
+            for (var i = 0; i < menuItems.length; i++) {
+                var menuItem = menuItems[i];
+                var href = menuItem.getAttribute("href");
+                if (href === currentPath) {
+                    menuItem.classList.add("active");
+                    break;
+                }
+            }
+        });
+
+    // Linklere tıklandığında etkin sayfayı belirleme
+    var links = document.querySelectorAll(".adminpanelleft .esassehifeadminpanel ul li a");
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener("click", function () {
+            var currentActive = document.querySelector(".adminpanelleft .esassehifeadminpanel ul li a.active");
+            if (currentActive) {
+                currentActive.classList.remove("active");
+            }
+            this.classList.add("active");
+        });
+    }
+    const togglebtns = document.querySelectorAll('.nav-toggle');
+    const sideBar = document.querySelector('div.side-navbar');
+    const sidebarLinks = document.querySelectorAll('.side-navbar li');
+    const threeDotMenu = document.querySelector('div.nav-menu-icon');
+    const navMenu = document.querySelector('div.nav-menu');
+    const backgroundFader = document.getElementsByClassName('background-fader')[0];
+
+
+    function toggleSidebar() {
+        sideBar.classList.toggle('show-side-navbar');
+        backgroundFader.classList.toggle('fade-background');
+    }
+
+    togglebtns.forEach(togglebtn => {
+        togglebtn.onclick = function () {
+            toggleSidebar();
+        };
+    });
+
+    backgroundFader.onclick = () => {
+        toggleSidebar(); // this is much easier to understand
+    };
+
+    // Handle clicks on li element inside navigation sidebar
+
+</script>
+

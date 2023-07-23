@@ -1,0 +1,183 @@
+﻿@{
+    Layout = "/Views/shared/NavbarBottom.cshtml";
+}
+@using System.Security.Claims;
+@using NantechCargo.az.Models;
+@model List<Notification>
+<html>
+    <head>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.4.1/minty/bootstrap.min.css">
+	<link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet" />
+
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		  integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+		  crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css">
+        <style>
+			
+				@@media (max-width:768px) {
+
+			nav header {
+				right: 0;
+			}
+				}
+			body{
+				display:flex;
+			}
+		.row {
+			margin: auto;
+			padding: 30px;
+			width: 80%;
+			display: flex;
+			flex-flow: column;
+		}
+
+			.row .card {
+				width: 100%;
+				margin-bottom: 5px;
+				display: block;
+				transition: opacity 0.3s;
+			}
+
+		.card-body {
+			padding: 0.5rem;
+		}
+
+			.card-body table {
+				width: 100%;
+			}
+
+				.card-body table tr {
+					display: flex;
+				}
+
+					.card-body table tr td a.btn {
+						font-size: 0.8rem;
+						padding: 3px;
+					}
+
+					.card-body table tr td:nth-child(2) {
+						text-align: right;
+						justify-content: space-around;
+					}
+
+		.card-title:before {
+			display: inline-block;
+			font-family: 'Font Awesome\ 5 Free';
+			font-weight: 900;
+			font-size: 1.1rem;
+			text-align: center;
+			border: 2px solid grey;
+			border-radius: 100px;
+			width: 30px;
+			height: 30px;
+			padding-bottom: 3px;
+			margin-right: 10px;
+		}
+
+		.notification-invitation .card-body .card-title:before {
+			color: #90caf9;
+			border-color: #90caf9;
+			content: "\f007";
+		}
+
+		.notification-warning .card-body .card-title:before {
+			color: #ffe082;
+			border-color: #ffe082;
+			content: "\f071";
+		}
+
+		.notification-danger .card-body .card-title:before {
+			color: #ffab91;
+			border-color: #ffab91;
+			content: "\f00d";
+		}
+
+		.notification-reminder .card-body .card-title:before {
+			color: #ce93d8;
+			border-color: #ce93d8;
+			content: "\f017";
+		}
+
+		.card.display-none {
+			display: none;
+			transition: opacity 2s;
+		}
+
+
+		</style>
+    </head>
+    <body>
+
+	<div class="row notification-container">
+		<h2 class="text-center">My Notifications</h2>
+		<p class="dismiss text-right"><a id="dismiss-all" href="#">Dimiss All</a></p>
+		<div class="card notification-card notification-invitation">
+			<form action="/User/UserNotification" method="post">
+
+			<div class="card-body">
+				 @foreach (var item in Model)
+                            {
+				<table>
+					<tr>
+							<td style="width:70%"><div class="card-title"> @item.NotificationTitle <b> @item.NotificationDate </b>
+
+										@foreach (var product in item.NotificationOrder.Products)
+										{
+											<b>@product.ProductName</b> <!-- Ürünün ProductName'ini görüntüler -->
+										}
+									</div>
+								</td>
+						<td style="width:30%">
+							<a href="#" class="btn btn-primary">View</a>
+							<a href="#" class="btn btn-danger dismiss-notification">Dismiss</a>
+						</td>
+					</tr>
+
+				</table>
+
+							}
+				</div>
+
+			</form>
+
+			</div>
+		</div>
+	</div>
+
+
+<script>
+
+		const dismissAll = document.getElementById('dismiss-all');
+		const dismissBtns = Array.from(document.querySelectorAll('.dismiss-notification'));
+
+		const notificationCards = document.querySelectorAll('.notification-card');
+
+		dismissBtns.forEach(btn => {
+			btn.addEventListener('click', function (e) {
+				e.preventDefault;
+				var parent = e.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
+				parent.classList.add('display-none');
+			})
+		});
+
+		dismissAll.addEventListener('click', function (e) {
+			e.preventDefault;
+			notificationCards.forEach(card => {
+				card.classList.add('display-none');
+			});
+			const row = document.querySelector('.notification-container');
+			const message = document.createElement('h4');
+			message.classList.add('text-center');
+			message.innerHTML = 'All caught up!';
+			row.appendChild(message);
+		})
+
+
+</script>
+    </body>
+</html>
+
+
+

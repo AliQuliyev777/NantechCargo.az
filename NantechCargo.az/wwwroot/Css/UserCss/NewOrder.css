@@ -1,0 +1,35 @@
+﻿.sifarislerelaveet i {
+    background-color: rgb(255, 89, 0);
+    padding: 20px;
+    cursor: pointer;
+}
+
+.form-control {
+    width: 100% !important;
+}
+
+.addordersifarisler {
+    margin-top: 10%;
+}
+
+.calc input {
+    background-color: red;
+}
+
+
+@media (max-width:768px) {
+
+    .Birlsdr1 {
+        padding-bottom:50px;
+        display: block !important;
+    }
+
+}
+
+.sifarislerimrightmain {
+    background-color: rgb(237, 237, 237); 
+    width: 100%;
+}
+.Birlsdr1 {
+    display:flex;
+}

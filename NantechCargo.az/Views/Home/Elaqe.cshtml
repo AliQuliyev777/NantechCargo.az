@@ -1,0 +1,174 @@
+﻿@{
+    Layout = "/Views/shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="/Css/ExpargoMain.css">
+
+<link rel="stylesheet" href="/Css/Expargo_Xeber.css">
+
+<!-- !Android Navbar -->
+
+
+
+
+
+
+<div id="contact-container" class="container-fluid my-3">
+    <div class="row text-primary justify-content-center text-center">
+        <div class="col-12 text-center mb-5 elaqeeeemain">
+            <h1 class="text-uppercase heading">Əlaqə</h1>
+            <p class="subheading">
+                Expargo (Expert MMC) ilə əlaqə qurmaq və məlumat
+                almaq üçün <br class="d-md-block d-none"> aşağıdakı əlaqə üsullarından
+                istifadə edə bilərsiniz.
+            </p>
+        </div>
+
+
+
+
+
+        <div class="col-12 col-md-6 mb-4 d-flex justify-content-center">
+            <div class="box">
+                <img src="https://www.expargo.com/assets/icon/contact-icon-1.svg" alt="">
+                <h5 class="my-2">Bizə zəng edin</h5>
+                <h5>
+                    <a href="#">
+                        (012) 210
+                        00 85
+                    </a>
+                </h5>
+                <div class="bottom">
+                    <p class="content mb-2">Çağrı mərkəzinin iş saatları</p>
+                    <p class="content">Həftəiçi: 10:00-18:00 | Şənbə: 10:00-16:00</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 mb-4 d-flex justify-content-center">
+            <div class="box">
+                <img src="https://www.expargo.com/assets/icon/contact-icon-2.svg" alt="">
+                <h5 class="my-2">Email göndərin</h5>
+                <h5>
+                    <a href="mailto:info@expargo.com">info@expargo.com</a>
+                </h5>
+                <div class="bottom">
+                    <p class="content">
+                        24 saat ərzində sorğularınızı <br> göndərə bilərsiniz
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 mb-4 d-flex justify-content-center">
+            <div class="box social-box">
+                <img src="https://www.expargo.com/assets/icon/contact-icon-3.svg" alt="">
+                <h5 class="my-2">Sosial Media</h5>
+                <div class="bottom">
+                    <p class="mb-2">
+                        <a href="">
+                            <i aria-hidden="true" class="fa fa-instagram social"></i>
+                        </a> expargo.az
+                    </p>
+                    <p>
+                        <a href="">
+                            <i aria-hidden="true" class="fa fa-facebook social"></i>
+                        </a> expargo.az
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 mb-4 d-flex justify-content-center customer">
+            <div class="box">
+                <img src="https://www.expargo.com/assets/icon/contact-icon-4.svg" alt="" style="margin-top: -20px;">
+                <h5 class="my-2">Müştəri xidmətləri</h5>
+                <div class="bottom">
+                    <p>
+                        <a href="#">
+                            <small>
+                                <strong>
+                                    Mərkəz
+                                    filialı
+                                </strong>
+                            </small>
+                            <p>
+                                <small>
+                                    Əhməd Cavad küçəsi
+                                    15
+                                </small>
+                            </p>
+                        </a>
+                    </p>
+                    <p>
+                        <a href="#">
+                            <small>
+                                <strong>
+                                    28 May
+                                    filialı
+                                </strong>
+                            </small>
+                            <p>
+                                <small>28 May küçəsi 69C</small>
+                            </p>
+                        </a>
+                    </p>
+                    <p class="mb-2">
+                        <a href="#">
+                            <small>
+                                <strong>
+                                    Nəriman Nərimanov
+                                    filialı
+                                </strong>
+                            </small>
+                            <p>
+                                <small>
+                                    Ağa Nemətulla küçəsi
+                                    49a
+                                </small>
+                            </p>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+
+    // Navbar
+
+    const togglebtns = document.querySelectorAll('.nav-toggle');
+    const sideBar = document.querySelector('div.side-navbar');
+    const sidebarLinks = document.querySelectorAll('.side-navbar li');
+    const threeDotMenu = document.querySelector('div.nav-menu-icon');
+    const navMenu = document.querySelector('div.nav-menu');
+    const backgroundFader = document.getElementsByClassName('background-fader')[0];
+
+
+    function toggleSidebar() {
+        sideBar.classList.toggle('show-side-navbar');
+        backgroundFader.classList.toggle('fade-background');
+    }
+
+    togglebtns.forEach(togglebtn => {
+        togglebtn.onclick = function () {
+            toggleSidebar();
+        };
+    });
+
+    backgroundFader.onclick = () => {
+        toggleSidebar(); // this is much easier to understand
+    };
+
+    // Handle clicks on li element inside navigation sidebar
+    sidebarLinks.forEach(link => {
+        link.onclick = e => {
+            e.preventDefault();
+            toggleSidebar();
+        };
+    });
+
+    threeDotMenu.onclick = function () {
+        navMenu.classList.toggle('show-nav-menu');
+    };
+
+
+</script>

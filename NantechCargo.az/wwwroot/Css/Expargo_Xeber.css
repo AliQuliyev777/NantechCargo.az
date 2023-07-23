@@ -1,0 +1,308 @@
+﻿
+
+/* RESET STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+button {
+    border: none;
+    background: none;
+}
+
+a,
+a:hover {
+    color: inherit;
+}
+
+figure {
+    margin: 0;
+}
+
+
+/* MAIN STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.container {
+    max-width: 1100px;
+}
+
+.section-with-carousel .swiper-slide figure {
+    position: relative;
+    overflow: hidden;
+}
+
+.swiper-slide img {
+    width: 100%;
+    object-fit: contain !important;
+}
+
+.section-with-carousel .swiper-slide img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.section-with-carousel .swiper-slide figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(20%);
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.4s;
+}
+
+    .section-with-carousel .swiper-slide figcaption svg {
+        flex-shrink: 0;
+        fill: white;
+        margin-right: 10px;
+    }
+
+.section-with-carousel .swiper-slide-active figcaption {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+
+.section-with-carousel .carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 12px;
+    z-index: 1;
+}
+
+    .section-with-carousel .carousel-controls .carousel-control {
+        opacity: 0.25;
+        transition: opacity 0.3s;
+    }
+
+        .section-with-carousel .carousel-controls .carousel-control:hover {
+            opacity: 1;
+        }
+
+.section-with-carousel .swiper-pagination-bullets {
+    position: static;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+    .section-with-carousel .swiper-pagination-bullets .swiper-pagination-bullet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        height: auto;
+        background: transparent;
+        opacity: 0.5;
+        margin: 0 8px;
+        border-radius: 0;
+        transition: opacity 0.3s;
+    }
+
+        .section-with-carousel
+        .swiper-pagination-bullets
+        .swiper-pagination-bullet
+        .line {
+            width: 3px;
+            height: 3px;
+            background: black;
+            transition: transform 0.3s;
+        }
+
+        .section-with-carousel
+        .swiper-pagination-bullets
+        .swiper-pagination-bullet
+        .number {
+            opacity: 0;
+            transform: translateY(-7px);
+            transition: all 0.3s;
+        }
+
+        .section-with-carousel
+        .swiper-pagination-bullets
+        .swiper-pagination-bullet.swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+
+            .section-with-carousel
+            .swiper-pagination-bullets
+            .swiper-pagination-bullet.swiper-pagination-bullet-active
+            .line {
+                transform: scaleX(8);
+            }
+
+            .section-with-carousel
+            .swiper-pagination-bullets
+            .swiper-pagination-bullet.swiper-pagination-bullet-active
+            .number {
+                opacity: 1;
+                transform: none;
+            }
+
+.copyright .col-auto:not(:last-child) {
+    position: relative;
+}
+
+    .copyright .col-auto:not(:last-child)::before {
+        content: "•";
+        position: absolute;
+        top: 50%;
+        right: -2px;
+        transform: translateY(-50%);
+    }
+
+@media (max-width: 768px) {
+    .section-with-carousel .swiper-slide img {
+        height: 370px;
+    }
+
+    .leftaUserID {
+        margin-bottom: 30% !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .section-with-carousel .swiper-slide img {
+        height: 420px;
+    }
+
+    .section-with-carousel .carousel-controls {
+        padding: 0 50px;
+    }
+}
+
+.swiper-container-horizontal {
+    overflow: hidden !important;
+}
+/* FOOTER STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.carousel012012 .page-footer {
+    position: fixed;
+    right: 0;
+    bottom: 50px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    z-index: 1;
+    background: white;
+}
+
+    .carousel012012  .page-footer a {
+        display: flex;
+        margin-left: 4px;
+    }
+
+.carousel012012 .container {
+    font-size: 30px;
+    width: 5% !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+.carousel012012 laqeeeemain {
+    color: black;
+}
+
+.carousel012012 .box {
+    color: black;
+    background: #ffffff;
+    box-shadow: 0 5px 50px #0000000d;
+    border-radius: 36px;
+    padding: 37px 44px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 390px;
+}
+
+.carousel012012 .container-fluid a {
+    color: black;
+    text-decoration: none;
+}
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #8f54a0 #ffffff;
+}
+
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: #ffffff;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: #8f54a0;
+        border-radius: 56px;
+        border: 50px none #ffffff;
+    }
+
+
+.AdminPanelaaaaMain {
+    width: 100%;
+    display: flex;
+    height: 130vh;
+    background-color: rgb(241, 241, 241);
+}
+
+.leftaUserID {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    /* height: 40vh; */
+    /* background-color: rgb(255, 140, 0); */
+}
+
+.item-inner1112 {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius: 10px;
+    /* width: 90%; */
+    /* height: 10vh; */
+    background-color: rgb(255, 255, 255);
+}
+.iconitem1012 i{
+    font-size:15px;
+}
+.iconitem1012 {
+    width: contain;
+    height: 10vh;
+    background-color: rgb(255, 255, 255);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Inter, sans-serif;
+    ;
+}
+
+@media screen and (max-width: 460px) {
+
+    .leftaUserID {
+        width: auto !important;
+    }
+}
+
+body{
+    overflow-x:hidden;
+}

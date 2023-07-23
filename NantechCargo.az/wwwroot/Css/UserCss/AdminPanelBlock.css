@@ -1,0 +1,383 @@
+﻿* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    color: #012;
+    font-size: 16px;
+    font-family: "Open Sans", "Helvetica Neue", Tahoma, sans-serif;
+}
+td{
+    color:black;
+}
+
+body {
+    background-image: url("https://wallpaperaccess.com/full/5571714.jpg");
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.page {
+    left: 4%;
+    right: 4%;
+    top: 4%;
+    bottom: 4%;
+    background-color: rgba(255, 255, 255, 0.4);
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    overflow: hidden;
+    width:100%;
+}
+
+.content .dataTable table thead tr th {
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+}
+
+.content {
+    backdrop-filter: brightness(85%) blur(5px);
+    -webkit-flex: 1;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+    .content .header {
+        -webkit-flex: 0 0 36px;
+        flex: 0 0 36px;
+        padding: 8px 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+        .content .header .title {
+            float: left;
+            font-size: 0.8rem;
+        }
+
+            .content .header .title .name {
+                font-size: 1.3rem;
+                font-weight: bold;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            }
+
+        .content .header .functions {
+            float: right;
+            padding-right: 10px;
+        }
+
+            .content .header .functions .add {
+                cursor: pointer;
+                opacity: 0.6;
+                -moz-transition: all 0.2s linear;
+                -o-transition: all 0.2s linear;
+                -webkit-transition: all 0.2s linear;
+                transition: all 0.2s linear;
+            }
+
+                .content .header .functions .add .icon {
+                    display: inline-block;
+                    border: 2px solid #012;
+                    border-radius: 100%;
+                    width: 25px;
+                    height: 25px;
+                    text-align: center;
+                    padding: 1px 0 0 0;
+                    font-size: 1.1rem;
+                    -moz-transform: rotate(0deg);
+                    -ms-transform: rotate(0deg);
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                    -moz-transition: all 0.5s linear;
+                    -o-transition: all 0.5s linear;
+                    -webkit-transition: all 0.5s linear;
+                    transition: all 0.5s linear;
+                }
+
+                .content .header .functions .add span {
+                    overflow: hidden;
+                    display: inline-block;
+                    margin-left: 5px;
+                    font-size: 0.8rem;
+                    width: 0px;
+                    font-weight: 600;
+                    white-space: nowrap;
+                    -moz-transition: all 0.2s ease;
+                    -o-transition: all 0.2s ease;
+                    -webkit-transition: all 0.2s ease;
+                    transition: all 0.2s ease;
+                }
+
+                .content .header .functions .add:hover {
+                    opacity: 1.0;
+                }
+
+                    .content .header .functions .add:hover span {
+                        width: 60px;
+                    }
+
+                    .content .header .functions .add:hover .icon {
+                        -moz-transform: rotate(180deg);
+                        -ms-transform: rotate(180deg);
+                        -webkit-transform: rotate(180deg);
+                        transform: rotate(180deg);
+                    }
+
+    .content .dataTable {
+        -webkit-flex: 1;
+        flex: 1;
+        padding: 10px;
+        font-size: 0.9rem;
+        overflow: auto;
+    }
+
+        .content .dataTable table {
+            width: 100%;
+            -moz-user-select: -moz-none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+            .content .dataTable table thead tr {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+                .content .dataTable table thead tr th {
+                    text-align: left;
+                    font-weight: 700;
+                    padding: 4px 2px;
+                    vertical-align: middle;
+                    text-transform: uppercase;
+                }
+
+                    .content .dataTable table thead tr th.selectAll {
+                        font-size: 1.1rem;
+                        vertical-align: middle;
+                        padding-right: 2px;
+                    }
+
+                        .content .dataTable table thead tr th.selectAll.selected i:before {
+                            content: "\f046";
+                        }
+
+            .content .dataTable table tbody tr {
+                cursor: pointer;
+                text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+            }
+
+                .content .dataTable table tbody tr:nth-child(even) {
+                    background-color: rgba(0, 0, 0, 0.05);
+                }
+
+                .content .dataTable table tbody tr td {
+                    padding: 8px 2px;
+                }
+
+                    .content .dataTable table tbody tr td:nth-child(1) .checkbox {
+                        font-size: 1.1rem;
+                        vertical-align: middle;
+                        width: 18px;
+                    }
+
+                .content .dataTable table tbody tr:hover {
+                    background-color: rgba(0, 0, 0, 0.1);
+                }
+
+                .content .dataTable table tbody tr.selected {
+                    color: #000;
+                    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
+                }
+
+                    .content .dataTable table tbody tr.selected td:nth-child(1) .checkbox:before {
+                        content: "\f046";
+                    }
+
+                .content .dataTable table tbody tr.inactive {
+                    font-style: italic;
+                    color: rgba(0, 17, 34, 0.5);
+                }
+
+                .content .dataTable table tbody tr.marked td:nth-child(2):after {
+                    content: 'marked';
+                    font-size: 0.6rem;
+                    background-color: rgba(0, 92, 126, 0.17);
+                    border: 1px solid rgba(0, 92, 126, 0.4);
+                    color: White;
+                    padding: 1px 3px;
+                    -moz-border-radius: 3px;
+                    -webkit-border-radius: 3px;
+                    border-radius: 3px;
+                    margin-left: 5px;
+                    vertical-align: top;
+                }
+
+.properties {
+    backdrop-filter: brightness(85%) blur(5px);
+    -webkit-flex: 0 0 23rem;
+    flex: 0 0 23rem;
+    order: 1;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+}
+
+    .properties .slider {
+        -webkit-flex: 0 0 3px;
+        flex: 0 0 3px;
+        width: 3px;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.1);
+        cursor: col-resize;
+        -moz-transition: background-color 0.3s linear;
+        -o-transition: background-color 0.3s linear;
+        -webkit-transition: background-color 0.3s linear;
+        transition: background-color 0.3s linear;
+    }
+
+        .properties .slider:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+    .properties .propertyEditor {
+        -webkit-flex: 1;
+        flex: 1;
+        overflow: auto;
+        background-color: transparent;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        -moz-border-radius: 0px;
+        -webkit-border-radius: 0px;
+        border-radius: 0px;
+        color: #012;
+    }
+
+        .properties .propertyEditor table thead {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .properties .propertyEditor table tr td {
+            text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .properties .propertyEditor table tr th {
+            padding: 8px 10px 9px 10px;
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .properties .propertyEditor table tr td:nth-child(2) .hint {
+            color: #6E6E6E;
+        }
+
+        .properties .propertyEditor table tr td:nth-child(2) input:not([type="checkbox"]), .properties .propertyEditor table tr td:nth-child(2) textarea, .properties .propertyEditor table tr td:nth-child(2) select, .properties .propertyEditor table tr td:nth-child(2) .checklist, .properties .propertyEditor table tr td:nth-child(2) .droplist {
+            background-color: rgba(255, 255, 255, 0.4);
+            color: #012;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .properties .propertyEditor table tr td:nth-child(2) button.function {
+            background-color: rgba(68, 68, 68, 0.5);
+        }
+
+            .properties .propertyEditor table tr td:nth-child(2) button.function:hover {
+                background-color: rgba(68, 68, 68, 0.7);
+            }
+
+        .properties .propertyEditor table tr.validation-error .errors, .properties .propertyEditor table tr.validation-error td:nth-child(1) {
+            color: #C70000;
+        }
+
+@media (max-width: 1200px) {
+    .dataTable th:nth-child(5), .dataTable td:nth-child(5) {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    .dataTable th:nth-child(4), .dataTable td:nth-child(4) {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .dataTable th:nth-child(3), .dataTable td:nth-child(3) {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .page {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .properties {
+        -webkit-flex: 0 0 31rem;
+        flex: 0 0 31rem;
+    }
+}
+
+.ghostSlider {
+    position: absolute;
+    width: 3px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: col-resize;
+    z-index: 9999;
+}
+
+::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.4);
+    -webkit-border-radius: 1ex;
+    border: none;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+@media (max-width:768px) {
+
+
+   body {
+        display: block !important;
+    }
+}

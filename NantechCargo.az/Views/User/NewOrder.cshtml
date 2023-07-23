@@ -1,0 +1,323 @@
+﻿@using System.Security.Claims;
+@using NantechCargo.az.Models;
+@model List<Branch>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    @*<link rel="stylesheet" href="/Expargo_SIfarislerim/Expargo_Sifarislerim.css">*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link href="~/css/usercss/neworder.css" rel="stylesheet" />
+    <style>
+ 
+        .baglamalartext a i{
+            text-decoration:none;
+        }
+
+        .baglamalartext a  {
+            color:black;     
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="baglamalartext">
+        <h3>
+            <a href="/User/Sifarislerim">
+                <i class="fa-solid fa-chevron-left"></i>Sifarisler
+            </a>
+        </h3>
+    </div>
+
+    <form method="post" action="/User/AddOrder">
+        <div class="Birlsdr1">
+            <div class="sifarislerimrightmain" >
+                <div class="tab-content" id="nav-tabContent" style="margin: auto 3rem;">
+                    <button onclick="addnew()" type="button" style="cursor:pointer; width:50%;"
+                            class="btn btn-success yeniyarat">
+                        Link əlavə et
+                    </button>
+                    <!-- Order Details -->
+                    <div class="tab-pane fade show active" id="order" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div role="tablist" id="nantech-kargo">
+                            <div class=" ">
+                                <button id="delete" onclick="sil(this)" type="button">legv et</button>
+                                <div class="card">
+                                    <div class="card-header collapsed" role="tab" id="headingThree"
+                                         data-toggle="collapse" href="#" aria-expanded="true"
+                                         aria-controls="collapseThree">
+                                        <h1 class="mb-0">
+                                            Delivery Status <span>@User.FindFirst(ClaimTypes.NameIdentifier).Value</span>
+
+                                        </h1>
+                                    </div>
+                                    <div id="collapseThree" class="collapse show" role="tabpanel"
+                                         aria-labelledby="headingThree" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <div class="form-group row">
+                                                <div class="col-md-8 col-sm-12">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-md-4 col-form-label" for="location">
+                                                    Mehsul Adi
+                                                </label>
+                                                <div class="col-md-8 col-sm-12">
+                                                    <input type="text" class="col-md-8 form-control" id="location"
+                                                           placeholder="Misal üçün:Mehsulun Adi..."  name="ProductName">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-md-4 col-form-label" for="ProductUrl">
+                                                    Mehsul
+                                                    Linki
+                                                </label>
+                                                <div class="col-md-8 col-sm-12">
+                                                    <input type="url" class="col-md-8 form-control" id="ProductUrl"
+                                                           placeholder="Misal üçün: //trendyol..."  name="ProductUrl">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-md-4 col-form-label" for="ProductPrice">
+                                                    Mehsul
+                                                    Qiymeti
+                                                </label>
+                                                <div class="col-md-8 col-sm-12">
+                                                    <input type="number" class="col-md-8 form-control"
+                                                           placeholder="e.g. there "  name="ProductPrice">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-md-4 col-form-label" for="ProductCargoAmount">
+                                                    Daxili
+                                                    Kargo(TRY)
+                                                </label>
+                                                <div class="col-md-8 col-sm-12">
+                                                    <input type="number" class="col-md-8 form-control" id="dahiliCargo"
+                                                           placeholder="e.g. there "  name="ProductCargoAmount">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-md-4 col-form-label" for="ProductCount">
+                                                    Eded
+                                                </label>
+                                                <div class="col-md-8 col-sm-12">
+                                                    <input type="number" class="col-md-8 form-control" id="ProductCount"
+                                                           placeholder="e.g. there "  name="ProductCount">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-md-4 col-form-label" for="ProductShopID">
+                                                    Magaza ID
+                                                </label>
+                                                <div class="col-md-8 col-sm-12">
+                                                    <input type="text" class="col-md-8 form-control" id="ProductShopID"
+                                                           placeholder="e.g. 123452"  name="ProductShopId">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-md-4 col-form-label" for="trackingNum">
+                                                    Xususi Qeydler
+                                                </label>
+                                                <div class="col-md-8 col-sm-12">
+                                                    <input type="text" class="col-md-8 form-control" id="trackingNum"
+                                                           placeholder="zeruri deyil" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="product" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        Display Product Info Content
+                    </div>
+                    <div class="tab-pane fade" id="factory" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        Display Factory Order Content
+                    </div>
+                    <div class="tab-pane fade" id="customer" role="tabpanel" aria-labelledby="nav-contact-tab">
+                        Display Customer Info Content
+                    </div>
+                    <div class="tab-pane fade" id="files" role="tabpanel" aria-labelledby="nav-contact-tab">
+                        Display Files
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 addordersifarisler">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-inline h4">Order Details</div>
+                        <div class="d-inline float-right"><small><a href="">Edit</a></small></div>
+                    </div>
+                    <div class="card-body">
+                        <dl class="row">
+                            <dd class="col-sm-4">Qiymət:</dd>
+                            <dt class="col-sm-8" id="PriceSee">0.00$</dt>
+
+                        </dl>
+                        <dl class="row">
+                            <dd class="col-sm-4">Daxili kargo:</dd>
+                            <dt class="col-sm-8" id="PriceSee2">0.00$</dt>
+
+                        </dl>
+                        <dl class="row">
+                            <dd class="col-sm-4">Bank xərci: </dd>
+                            <dt class="col-sm-8" id="BankXerci">0.00$</dt>
+
+                        </dl>
+                        <hr>
+                        <dl class="row d-flex" style="width: 100% !important;display:flex !important;" id="sonuc">
+                            <dt class="col-sm-12">Toplam</dt>
+                            <dd class="col-sm-12" id="TotalSum">0.00$</dd>
+                        </dl>
+                    </div>
+                </div>
+
+
+
+                <select name="FilialId" asp-items="@ViewBag.Branch">
+                    <option value="">Filial</option>
+                </select>
+                <input type="submit" value="Tesdiq Et" />
+            </div>
+        </div>
+    </form>
+    <script>
+
+
+
+        function addnew() {
+            const rowElement = document.createElement('div');
+            rowElement.classList.add('azer');
+            rowElement.innerHTML = `
+                                                       <div class="azer">
+                                                            <button type="button" id="delete" onclick="sil()">legv et</button>
+                                                            <div class="card">
+                                                                <div class="card-header collapsed" role="tab" id="headingThree" data-toggle="collapse" href="#" aria-expanded="true" aria-controls="collapseThree">
+                                                                    <h1 class="mb-0">
+                                                                        Delivery Status <span>Ali</span>
+
+                                                                    </h1>
+                                                                </div>
+                                                                <div id="collapseThree" class="collapse show" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+                                                                    <div class="card-body">
+                                                                        <div class="form-group row">
+                                                                            <div class="col-md-8 col-sm-12">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label class="col-md-4 col-form-label" for="location">
+                                                                                Mehsul Adi
+                                                                            </label>
+                                                                            <div class="col-md-8 col-sm-12">
+                                                                                <input type="text" class="col-md-8 form-control" id="location" placeholder="Misal üçün:Mehsulun Adi..." ="" name="ProductName">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label class="col-md-4 col-form-label" for="ProductUrl">
+                                                                                Mehsul
+                                                                                Linki
+                                                                            </label>
+                                                                            <div class="col-md-8 col-sm-12">
+                                                                                <input type="url" class="col-md-8 form-control" id="ProductUrl" placeholder="Misal üçün: //trendyol..." ="" name="ProductUrl">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label class="col-md-4 col-form-label" for="ProductPrice">
+                                                                                Mehsul
+                                                                                Qiymeti
+                                                                            </label>
+                                                                            <div class="col-md-8 col-sm-12">
+                                                                                <input type="number" class="col-md-8 form-control" placeholder="e.g. there " ="" name="ProductPrice">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label class="col-md-4 col-form-label" for="ProductCargoAmount">
+                                                                                Daxili
+                                                                                Kargo(TRY)
+                                                                            </label>
+                                                                            <div class="col-md-8 col-sm-12">
+                                                                                <input type="number" class="col-md-8 form-control" id="dahiliCargo" placeholder="e.g. there " ="" name="ProductCargoAmount">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label class="col-md-4 col-form-label" for="ProductCount">
+                                                                                Eded
+                                                                            </label>
+                                                                            <div class="col-md-8 col-sm-12">
+                                                                                <input type="number" class="col-md-8 form-control" id="ProductCount" placeholder="e.g. there " ="" name="ProductCount">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label class="col-md-4 col-form-label" for="ProductShopID">
+                                                                                Magaza ID
+                                                                            </label>
+                                                                            <div class="col-md-8 col-sm-12">
+                                                                                <input type="text" class="col-md-8 form-control" id="ProductShopID" placeholder="e.g. 123452" ="" name="ProductShopId">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label class="col-md-4 col-form-label" for="trackingNum">
+                                                                                Xususi Qeydler
+                                                                            </label>
+                                                                            <div class="col-md-8 col-sm-12">
+                                                                                <input type="text" class="col-md-8 form-control" id="trackingNum" placeholder="zeruri deyil" ="">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                    `;
+            document.querySelector('#nantech-kargo ').appendChild(rowElement);
+        }
+
+
+
+        function sil() {
+            const rowElement = document.querySelector('.azer');
+            if (rowElement) {
+                rowElement.parentNode.removeChild(rowElement);
+            }
+        }
+
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+
+    <script>
+        $('#nantech-kargo').on('keyup', '[name="ProductPrice"], [name="ProductCargoAmount"]', function () {
+            let sumPrice = 0;
+            let PriceSee2 = 0;
+            let bankXerci = 0;
+            $('[name="ProductPrice"]').each(function () {
+                sumPrice += Number($(this).val())
+                bankXerci += .5;
+            })
+            $('[name="ProductCargoAmount"]').each(function () {
+                PriceSee2 += Number($(this).val())
+            })
+            $('#PriceSee').text(sumPrice.toFixed(2) + '$')
+            $('#PriceSee2').text(PriceSee2.toFixed(2) + '$')
+            $("#BankXerci").text(bankXerci.toFixed(2) + "$")
+            $('#TotalSum').text((sumPrice + PriceSee2 + bankXerci).toFixed(2) + '$')
+        })
+    </script>
+</body>
+
+</html>

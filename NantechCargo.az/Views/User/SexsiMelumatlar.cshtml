@@ -1,0 +1,148 @@
+﻿@{
+    Layout = "/Views/shared/NavbarBottom.cshtml";
+}
+
+@using NantechCargo.az.Models;
+@model User
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Expargo_Login/Expargo_Login.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="~/css/usercss/loginmain.css" rel="stylesheet" />
+
+    <link href="~/css/usercss/NavbarBottom.css" rel="stylesheet" />
+
+
+    <link href="~/css/usercss/expargologin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+    body{
+        display:flex;
+    }
+        .seleeect input{
+            display:none;
+        }
+        .seleeect img{
+            width:100% !important;
+        }
+
+
+
+        .baglamalartext button {
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            border-radius: 48px;
+            border: 2px solid purple;
+            transition: all 1s ease;
+            transform: rotate(-0.5turn);
+        }
+
+        .baglamalartext button::after {
+                content: "\279C";
+                font-size: 18px;
+                color: purple;
+                transition: all 0.3s ease;
+            }
+
+        .baglamalartext button:hover {
+                background-color: darkgrey;
+                border-color: purple;
+            }
+
+        .baglamalartext button:hover::after {
+                color: purple;
+            }
+
+</style>
+
+</head>
+
+<body>
+
+
+    <div class="allSexsiMelumatlar">
+        <div class="rightSexsiMelummatlarMain">
+            <div class="baglamalartext">
+                <a href="/User/UserId">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+            </div>
+
+        <form action="/User/SexsiMelumatlar/@Model.UserId" method="post" enctype="multipart/form-data">
+            <div class=" rounded bg-white mt-5 mb-5">
+                <div class="row">
+                    <div class="col-md-3 border-right nnn">
+                            <input type="file" name="UserPhoto" id="CoursePhotoSelect" />
+                        <div class="d-flex flex-column align-items-center text-center p-3 py-5 seleeect">
+
+                                <img class=" mt-5 sssa"  src="/Img/@Model.UserPhoto">
+                              <input type="file" name="UserPhoto" id="CoursePhotoSelect" />                
+                        </div>
+                    </div>
+                    <div class="col-md-5 border-right">
+                        <div class="p-3 py-5">
+
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4 class="text-right">Profil Detallari</h4>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md-6">
+                                        <label class="labels">Ad</label><input name="UserFirstName" type="text" class="form-control" placeholder="first name" value="@Model.UserFirstName">
+
+                                    </div>
+                                <div class="col-md-6">
+                                        <label class="labels">Soyad</label><input type="text" class="form-control" placeholder="surname" name="UserLastName" value="@Model?.UserLastName">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                    <div class="col-md-12">
+                                        <label class="labels">Date</label><input type="text" class="form-control" placeholder="" name="UserBirthDay" value="@Model?.UserBirthDay">
+                                </div>
+                                <div class="col-md-12">
+                                        <label class="labels">E-mail</label><input type="email" class="form-control" placeholder="eMAIL" name="UserEmail" value="@Model?.UserEmail">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                        <label class="labels">Unvan</label><input type="text" class="form-control" placeholder="country" name="UserAddress" value="@Model?.UserAddress">
+                                </div>
+                                <div class="col-md-6">
+                                        <label class="labels">Fin kod</label><input type="text" class="form-control" placeholder="state" name="UserFin" value="@Model?.UserFin">
+                                </div>
+                            </div>
+                            <div class="mt-5 text-center">
+                                <button class="btn btn-primary profile-button"
+                                        type="submit"> Tesdiqle
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    </div>
+    
+    <script>
+      
+   
+    </script>
+</body>
+
+</html>
+
+
+

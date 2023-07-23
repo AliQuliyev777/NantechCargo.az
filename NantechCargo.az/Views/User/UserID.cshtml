@@ -1,0 +1,316 @@
+﻿@{
+    Layout = "/Views/shared/NavbarBottom.cshtml";
+}
+@using System.Security.Claims;
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Expargo_User.css">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="~/css/usercss/ExpargoLogin.css" rel="stylesheet" />
+    <link href="~/css/expargo_xeber.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo&display=swap" rel="stylesheet">
+    <style>
+        .item-inner1112{
+            margin-top:2%;
+            
+        }
+        *{
+            box-sizing:border-box;
+            padding:0;
+            margin:0;
+            
+        }
+        .hydrated{
+            font-size:15px
+        }
+        body{
+            display:flex;
+        }
+
+        nav header {
+            right: 0;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <section class="AdminPanelaaaaMain">
+        
+        <div class="leftaUserID">
+            <ion-text class="font-14 fw-500 ios hydrated" style="margin-bottom: 5px; font-size:40px;">
+            <i class="fa-regular fa-circle-user"></i> <ion-label class="sc-ion-label-ios-h sc-ion-label-ios-s ios hydrated">
+              <span style="font-size:20px;">
+                    @User.FindFirst(ClaimTypes.NameIdentifier).Value
+                    @User.FindFirst(ClaimTypes.Surname).Value
+               </span>
+
+                </ion-text>
+     
+
+            <div class="item-inner1112 d-flex justify-content-between">
+
+                <div class="textitemuser11 ">
+                    <ion-text class="font-18 fw-600 ios hydrated" style="font-weight: 800;"  id="example1">ID:
+                                @User.FindFirst(ClaimTypes.Sid).Value</ion-text >
+                    <p style="font-weight: 200;">Xarici ünvanlarda istifadə etmək zəruridir.</p>
+                </div>
+                <div class="iconitem1012 text-center">
+                    <i  onclick="triggerExample1()" class="fa-solid fa-paste" style="margin-top: 20px ;cursor: pointer;"></i>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="item-inner1112 d-flex justify-content-between" style="">
+                <div class="textitemuser11 ">
+                    <ion-text class="font-18 fw-600 ios hydrated" style="font-weight: 800;">
+
+
+
+
+
+                        <div class="form-group"><img src=""><label for="">Cari Filial</label><select id=""
+                                name="warehouse" class="form-control ng-untouched ng-pristine ng-valid">
+                                <option value=""> Mərkəz Filialı </option>
+                                <option value=""> 28 May filialı </option>
+                                <option value=""> Gənclik Filialı </option>
+                                <option value=""> Nərimanov Filialı
+                                </option>
+                                <option value=""> Əhmədli Filialı </option>
+                                <option value=""> Həzi Aslanov filialı
+                                </option>
+                                <option value=""> Bakıxanov Filialı </option>
+                                <option value="78"> Neftçilər Bravo Filialı
+                                </option>
+                                <option value=""> Q.Qarayev T/M </option>
+                                <option value=""> 20 Yanvar Filialı </option>
+                                <option value=""> İnşaatçılar Filialı
+                                </option>
+                                <option value="6"> Sumqayıt Filialı </option>
+                                <option value="33"> Xırdalan Filialı </option>
+                                <option value="5"> Gəncə Filialı </option>
+                                <option value="10"> Zaqatala Filialı </option>
+                                <option value=""> Expargo Biznes 🏢
+                                </option>
+                                <option value=""> Lənkəran T/M </option>
+                                <option value="59"> Mərdəkan T/M </option>
+                                <option value="49"> Hövsan T/M </option>
+                                <option value="60"> Yeni Günəşli T/M </option>
+                                <option value="67"> Badamdar T/M </option>
+                                <option value="58"> Zabrat T/M </option>
+                                <option value="64"> Əmircan T/M </option>
+                                <option value="63"> Buzovna T/M </option>
+                                <option value="75"> Binə Qəsəbəsi </option>
+                                <option value="48"> Lökbatan T/M </option>
+                                <option value="40"> Pirallahı T/M </option>
+                                <option value="15"> Şəki T/M </option>
+                                <option value="7"> Qəbələ T/M </option>
+                                <option value="23"> Xaçmaz T/M </option>
+                                <option value="14"> Qazax T/M </option>
+                                <option value="18"> Ağstafa T/M </option>
+                                <option value="16"> Quba T/M </option>
+                                <option value="21"> Balakən T/M </option>
+                                <option value="13"> Mingəçevir T/M </option>
+                                <option value="27"> Ağdaş T/M </option>
+                                <option value="28"> Astara T/M </option>
+                                <option value="32"> Şamaxı T/M </option>
+                                <option value="24"> Salyan T/M </option>
+                                <option value="31"> Lerik T/M </option>
+                                <option value="22"> Masallı T/M </option>
+                                <option value="26"> İsmayıllı T/M </option>
+                                <option value="19"> Tovuz T/M </option>
+                                <option value="20"> Şəmkir T/M </option>
+                                <option value="35"> Ağdam T/M </option>
+                                <option value="54"> Füzuli T/M </option>
+                                <option value="38"> Kürdəmir T/M </option>
+                                <option value="29"> Göyçay T/M </option>
+                                <option value="46"> Cəlilabad T/M </option>
+                                <option value="47"> Şirvan T/M </option>
+                                <option value="53"> Bərdə T/M </option>
+                                <option value="61"> Goranboy T/M </option>
+                                <option value="56"> Qax T/M </option>
+                                <option value="66"> Saatlı T/M </option>
+                                <option value="73"> Ağsu T/M </option>
+                                <option value="77"> Naxçıvan T/M </option>
+                                <option value="74"> Beyləqan T/M </option>
+                                <option value="76"> Ucar T/M </option>
+                                <option value="85"> NZS T/M </option>
+                                <option value="83"> Qusar T/M </option>
+                                <option value="86"> 20-ci Sahə T/M </option>
+                                <option value="84"> Yardımlı T/M </option>
+                            </select></div>
+                </div>
+                <div class="iconitem1012 text-center">
+                    <i class="fa-solid fa-angle-right " style="margin-top: 20px ;cursor: pointer;"></i>
+                </div>
+            </div>
+
+            <div class="item-inner1112 d-flex justify-content-between" style="">
+                
+                <div class="textitemuser11 ">
+                    <ion-text class="font-18 fw-600 ios hydrated" style="font-weight: 400;">Sexsi
+                        Melumatlar</ion-text>
+                </div>
+                <a href="/User/SexsiMelumatlar/@User.FindFirst(ClaimTypes.Sid).Value">
+
+                <div class="iconitem1012 text-center">
+                    <i class="fa-solid fa-angle-right" style="margin-top: 20px ;cursor: pointer;"></i>
+                </div>
+                </a>
+            </div>
+
+
+
+
+
+            <div class="item-inner1112 d-flex justify-content-between" style="">
+
+                <div class="textitemuser11 ">
+                    
+                    <ion-text class="font-18 fw-600 ios hydrated" style="font-weight: 400;">Sifre
+                        Deyisikliyi</ion-text>
+                </div>
+                <a href="/User/UserId_ChangePassword">
+
+                <div class="iconitem1012 text-center">
+                    <i class="fa-solid fa-angle-right" style="margin-top: 20px ;cursor: pointer;"></i>
+                    </a>
+                 </div>
+                    </div>
+
+
+
+
+
+
+            <div class="item-inner1112 d-flex justify-content-between" style="">
+
+                <div class="textitemuser11 ">
+                    <ion-text class="font-18 fw-600 ios hydrated" style="font-weight: 400;">SMS Onay
+                        Kodu</ion-text>
+                </div>
+                <div class="iconitem1012 text-center">
+                    <i class="fa-solid fa-angle-right" style="margin-top: 20px ;cursor: pointer;"></i>
+                </div>
+            </div>
+            <div class="item-inner1112 d-flex justify-content-between" style="">
+
+                <div class="textitemuser11 ">
+                    <ion-text class="font-18 fw-600 ios hydrated" style="font-weight: 400;">
+                        Muracietler
+                </div>
+
+                <div class="iconitem1012 text-center">
+                    <i class="fa-solid fa-angle-right" style="margin-top: 20px ;cursor: pointer;"></i>
+                </div>
+            </div>
+            <div class="item-inner1112 d-flex justify-content-between" style="">
+
+                <div class="textitemuser11 ">
+                    <ion-text class="font-18 fw-600 ios hydrated" style="font-weight: 400;">
+                       Odenisler
+                </div>
+
+                <div class="iconitem1012 text-center">
+                    <i class="fa-solid fa-angle-right" style="margin-top: 20px ;cursor: pointer;"></i>
+                </div>
+            </div>
+            <div class="item-inner1112 d-flex justify-content-between" style="">
+
+                <div class="textitemuser11 ">
+                    <ion-text class="font-18 fw-600 ios hydrated" style="font-weight: 400; ">
+                       Xidmet Tarixcesi
+                </div>
+
+                <div class="iconitem1012 text-center">
+                    <i class="fa-solid fa-angle-right" style="margin-top: 20px ;cursor: pointer;"></i>
+                </div>
+            </div>
+            <div class="item-inner1112 d-flex justify-content-between" style="">
+
+                <div class="textitemuser11 ">
+                    <ion-text class="font-18 fw-600 ios hydrated" style="font-weight: 400; ">
+                      Bildiris Abonelikleri
+                </div>
+
+                <div class="iconitem1012 text-center">
+                    <i class="fa-solid fa-angle-right" style="margin-top: 20px ;cursor: pointer;"></i>
+                </div>
+            </div>
+            <div class="item-inner1112 d-flex justify-content-between" style="">
+
+                <div class="textitemuser11 ">
+                    <ion-text class="font-18 fw-600 ios hydrated" style="font-weight: 400; ">
+                      Hesabi Sil
+                </div>
+
+                <div class="iconitem1012 text-center">
+                    <i class="fa-solid fa-angle-right" style="margin-top: 20px ;cursor: pointer;"></i>
+                </div>
+            </div>
+            <div class="item-inner1112 d-flex justify-content-between" style="">
+
+                <div class="textitemuser11 ">
+                    <ion-text class="font-18 fw-600 ios hydrated" style="font-weight: 400;">
+                        Cixis
+                        </div>
+
+                <div class="iconitem1012 text-center">
+                <a href="/User/Cixis">
+
+                    <i class="fa-solid fa-angle-right" style="margin-top: 20px ;cursor: pointer;"></i>
+                </a>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </section>
+
+
+    <script>
+        function triggerExample1() {
+            alert("Mətn kopyalandı!")
+            // get the container
+            const element = document.querySelector('#example1');
+            // Create a fake `textarea` and set the contents to the text
+            // you want to copy
+            const storage = document.createElement('textarea');
+            storage.value = element.innerHTML;
+            element.appendChild(storage);
+
+            // Copy the text in the fake `textarea` and remove the `textarea`
+            storage.select();
+            storage.setSelectionRange(0, 99999);
+            document.execCommand('copy');
+            element.removeChild(storage);
+        }
+
+
+    </script>
+</body>
+
+</html>

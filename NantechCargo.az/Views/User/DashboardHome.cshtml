@@ -1,0 +1,666 @@
+﻿@{
+    Layout = "/Views/shared/NavbarBottom.cshtml";
+}
+@*@{
+    Layout = "/Views/shared/LoginLayout.cshtml";
+}
+*@
+@using System.Security.Claims;
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Expargo_Login/Expargo_Login.css">
+    <link rel="stylesheet" href="Expargo_dashboardHome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.0/css/swiper.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inconsolata&amp;family=Open+Sans&amp;display=swap">
+
+    <link href="~/css/usercss/NavbarBottom.css" rel="stylesheet" />
+
+
+    <link href="~/css/usercss/expargologin.css" rel="stylesheet" />
+    <style>
+        body{
+
+            display:flex
+        }
+        .MainDashboard{
+            height: 25vh !important;
+        }
+      @@media (max-width:768px) {
+        
+            .swiper-container {
+                display: none !important;
+            }
+        
+        
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <section class="MainDashboard">
+
+
+        <div class="MainDashboard12">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><div class="swiper-slide-container"><img src="https://expargo.s3.eu-central-1.amazonaws.com/images/articles/image_170.jpg"></img></div></div>
+                    <div class="swiper-slide"><div class="swiper-slide-container"><img src="https://expargo.s3.eu-central-1.amazonaws.com/images/articles/image_171.jpg"></img></div></div>
+                    <div class="swiper-slide"><div class="swiper-slide-container"><img src="https://expargo.s3.eu-central-1.amazonaws.com/images/articles/image_172.jpg"></img></div></div>
+                    <div class="swiper-slide"><div class="swiper-slide-container"><img src="https://expargo.s3.eu-central-1.amazonaws.com/images/articles/image_173.jpg"></img></div></div>
+                    <div class="swiper-slide"><div class="swiper-slide-container"><img src="https://expargo.s3.eu-central-1.amazonaws.com/images/articles/image_174.jpg"></img></div></div>
+                    <div class="swiper-slide"><div class="swiper-slide-container"><img src="https://expargo.s3.eu-central-1.amazonaws.com/images/articles/image_175.jpg"></img></div></div>
+                    <div class="swiper-slide"><div class="swiper-slide-container"><img src="https://expargo.s3.eu-central-1.amazonaws.com/images/articles/image_176.jpg"></img></div></div>
+                    <div class="swiper-slide"><div class="swiper-slide-container"><img src="https://expargo.s3.eu-central-1.amazonaws.com/images/articles/image_177.jpg"></img></div></div>
+                    <div class="swiper-slide"><div class="swiper-slide-container"><img src="https://expargo.s3.eu-central-1.amazonaws.com/images/articles/image_178.jpg"></img></div></div>
+                    <div class="swiper-slide"><div class="swiper-slide-container"><img src="https://expargo.s3.eu-central-1.amazonaws.com/images/articles/image_179.jpg"></img></div></div>
+                    <div class="swiper-slide"><div class="swiper-slide-container"><img src="https://expargo.s3.eu-central-1.amazonaws.com/images/articles/image_180.jpg"></img></div></div>
+                    <div class="swiper-slide"><div class="swiper-slide-container"><img src="https://expargo.s3.eu-central-1.amazonaws.com/images/articles/image_181.jpg"></img></div></div>
+                    <div class="swiper-slide"><div class="swiper-slide-container"><img src="https://expargo.s3.eu-central-1.amazonaws.com/images/articles/image_182.jpg"></img></div></div>
+                    <div class="swiper-slide"><div class="swiper-slide-container"><img src="https://expargo.s3.eu-central-1.amazonaws.com/images/articles/image_183.jpg"></img></div></div>
+                    <div class="swiper-slide"><div class="swiper-slide-container"><img src="https://expargo.s3.eu-central-1.amazonaws.com/images/articles/image_184.jpg"></img></div></div>
+                    <div class="swiper-slide"><div class="swiper-slide-container"><img src="https://expargo.s3.eu-central-1.amazonaws.com/images/articles/image_185.jpg"></img></div></div>
+                    <div class="swiper-slide"><div class="swiper-slide-container"><img src="https://expargo.s3.eu-central-1.amazonaws.com/images/articles/image_186.jpg"></img></div></div>                  
+                    <div class="swiper-slide"><div class="swiper-slide-container"><img src="https://expargo.s3.eu-central-1.amazonaws.com/images/articles/image_187.jpg"></img></div></div>
+                    <div class="swiper-slide"><div class="swiper-slide-container"><img src="https://expargo.s3.eu-central-1.amazonaws.com/images/articles/image_188.jpg"></img></div></div>
+                    <div class="swiper-slide"><div class="swiper-slide-container"><img src="https://expargo.s3.eu-central-1.amazonaws.com/images/articles/image_189.jpg"></img></div></div>
+
+
+                </div>
+                <!-- Add Pagination -->
+            </div>
+
+            <div class="UserInformation container">
+                <div class="UserInformationtext container">
+                    <i class="fa-regular fa-circle-user"></i> <ion-label class="sc-ion-label-ios-h sc-ion-label-ios-s ios hydrated">
+                        <ion-text class="font-14 fw-500 ios hydrated" style="margin-bottom: 5px;">
+                            @User.FindFirst(ClaimTypes.NameIdentifier).Value
+                            @User.FindFirst(ClaimTypes.Surname).Value
+                        </ion-text><ion-text class="font-14 fw-600 ios hydrated" style="display: flex;">
+                            <span id="example1">
+                                ID:
+                                @User.FindFirst(ClaimTypes.Sid).Value
+                            </span>
+                            <ion-text color="medium" class="font-12 ion-color ion-color-medium ios hydrated"
+                                      style="padding: 0 4px;">•</ion-text>
+                            <p> Bakıxanov Filialı</p>
+                        </ion-text>
+                    </ion-label>
+                    <p style="font-size: 10px;">
+                        İstifadəçi ID kodunu xarici ünvanlarda istifadə etmək zəruridir.
+                    </p>
+                </div>
+                <div class="balanceMain" style="display: flex; ">
+                    <i class="fa-solid fa-clipboard " onclick="triggerExample1()"
+                       style="margin-right: 30%; cursor: pointer; "></i>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+
+
+            <div class="mainpricediv container"
+                 style="display: flex; justify-content: space-around; width: 100%; height: auto; background-color: white;">
+                <div class="balanceprice " style="width: 30%; height: auto; background-color: white; margin-right: 5%;">
+                    <div class="balanepriceh1 container ">
+                        <h3>Balans</h3>
+                        <div class="Usdbalance1 "
+                             style="width: 100%; display: flex; justify-content: space-between;align-items: center;  border-bottom: 1px solid black;">
+                            <div class="imageusaaa d-flex align-items-center">
+                                <img src="data:image/png;base64,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"
+                                     alt="" style="width: 10%; object-fit: contain;">
+                                <p class="m-2">USD</p>
+                            </div>
+                            <div class="priceUSAUSAUSA d-flex justify-content-center align-items-center">
+                                <p style="margin-top: 20px;" class="priceUSAUSAUSA12">
+                                    <i class="fa-solid fa-plus"
+                                       style="margin-right: 10px;"></i>$0.13
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="Usdbalance1 "
+                         style="width: 100%; display: flex; justify-content: space-between;align-items: center;  border-bottom: 1px solid black;">
+                        <div class="imageusaaa d-flex align-items-center">
+                            <img src="https://p1.hiclipart.com/preview/388/566/326/turkey-flag-of-turkey-turkish-language-national-flag-flag-of-denmark-red-logo-symbol-png-clipart.jpg"
+                                 alt="" style="width: 10%; object-fit: contain;">
+                            <p class="m-2">TRY</p>
+                        </div>
+                        <div class="priceUSAUSAUSA d-flex justify-content-center align-items-center"
+                             style="width: 60%;">
+                            <p style="margin-top: 20px;" class="priceUSAUSAUSA12">
+                                <i class="fa-solid fa-plus"
+                                   style="margin-right: 10px;"></i>$0.13
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <!-- !Next Div -->
+                <div class="externerlocation container"
+                     style="width:30%; background-color: rgb(255, 255, 255); margin-right: 5%;">
+                    <h3>Xarici Unvanlarim</h3>
+                    <div class="azerbaijancurren213y boxshadow01212">
+                        <div class="balanepriceh1">
+                            <div class="Usdbalance1 "
+                                 style="width: 100%; display: flex; justify-content: space-between;align-items: center;  border-bottom: 1px solid black;">
+
+                                <div class="imageusaaa d-flex align-items-center">
+                                    <img src="data:image/png;base64,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"
+                                         alt="" style="width: 10%; object-fit: contain;">
+                                    <p class="m-2">ABŞ </p>
+                                </div>
+                                <div class="priceUSAUSAUSA d-flex justify-content-center align-items-center">
+
+                                    <p style="margin-top: 20px;"><i class="fa-solid fa-chevron-right"></i></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="azerbaijancurren213y boxshadow01212">
+                        <div class="balanepriceh1">
+                            <div class="Usdbalance1 "
+                                 style="width: 100%; display: flex; justify-content: space-between;align-items: center;">
+                                <div class="imageusaaa d-flex align-items-center">
+                                    <img src="https://p1.hiclipart.com/preview/388/566/326/turkey-flag-of-turkey-turkish-language-national-flag-flag-of-denmark-red-logo-symbol-png-clipart.jpg"
+                                         alt="" style="width: 10%; object-fit: contain;">
+                                    <p class="m-2">Turkiye </p>
+                                </div>
+                                <div class="priceUSAUSAUSA d-flex justify-content-center align-items-center">
+                                    <p style="margin-top: 20px;"><i class="fa-solid fa-chevron-right"></i></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="externerlocation"
+                     style="width:30%; height: auto;display: flex; background-color: white;">
+
+
+                    <div class="col-lg-7 mt-5 mt-lg-0 go-middleground u-non-blurred">
+                        <div class="calculate-form">
+                            <h5 class="text-center" style="margin-bottom: 20px; font-weight: 700; font-size: 18px;">
+                                Kalkulyator <button type="button" id="info-button" placement="top"
+                                                    class="btn text-black p-0 d-inline">
+                                    <i class="fa fa-info-circle"></i>
+                                </button>
+                            </h5>
+                            <form novalidate="" class="ng-untouched ng-pristine ng-valid">
+                                <div class="birlesdir012012"
+                                     style="display: flex; width: 100%; height: auto; background-color: white ">
+                                    <div class="form-row">
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <img src=""><label for="">Məntəqə</label><select id="" name="warehouse"
+                                                                                                 class="form-control ng-untouched ng-pristine ng-valid">
+                                                    <option value=""> Mərkəz Filialı </option>
+                                                    <option value=""> 28 May filialı </option>
+                                                    <option value=""> Gənclik Filialı </option>
+                                                    <option value="">
+                                                        Nərimanov Filialı
+                                                    </option>
+                                                    <option value=""> Əhmədli Filialı </option>
+                                                    <option value="">
+                                                        Həzi Aslanov filialı
+                                                    </option>
+                                                    <option value=""> Bakıxanov Filialı </option>
+                                                    <option value="78">
+                                                        Neftçilər Bravo Filialı
+                                                    </option>
+                                                    <option value=""> Q.Qarayev T/M </option>
+                                                    <option value=""> 20 Yanvar Filialı </option>
+                                                    <option value="">
+                                                        İnşaatçılar Filialı
+                                                    </option>
+                                                    <option value="6"> Sumqayıt Filialı </option>
+                                                    <option value="33"> Xırdalan Filialı </option>
+                                                    <option value="5"> Gəncə Filialı </option>
+                                                    <option value="10"> Zaqatala Filialı </option>
+                                                    <option value="">
+                                                        Expargo Biznes 🏢
+                                                    </option>
+                                                    <option value=""> Lənkəran T/M </option>
+                                                    <option value="59"> Mərdəkan T/M </option>
+                                                    <option value="49"> Hövsan T/M </option>
+                                                    <option value="60"> Yeni Günəşli T/M </option>
+                                                    <option value="67"> Badamdar T/M </option>
+                                                    <option value="58"> Zabrat T/M </option>
+                                                    <option value="64"> Əmircan T/M </option>
+                                                    <option value="63"> Buzovna T/M </option>
+                                                    <option value="75"> Binə Qəsəbəsi </option>
+                                                    <option value="48"> Lökbatan T/M </option>
+                                                    <option value="40"> Pirallahı T/M </option>
+                                                    <option value="15"> Şəki T/M </option>
+                                                    <option value="7"> Qəbələ T/M </option>
+                                                    <option value="23"> Xaçmaz T/M </option>
+                                                    <option value="14"> Qazax T/M </option>
+                                                    <option value="18"> Ağstafa T/M </option>
+                                                    <option value="16"> Quba T/M </option>
+                                                    <option value="21"> Balakən T/M </option>
+                                                    <option value="13"> Mingəçevir T/M </option>
+                                                    <option value="27"> Ağdaş T/M </option>
+                                                    <option value="28"> Astara T/M </option>
+                                                    <option value="32"> Şamaxı T/M </option>
+                                                    <option value="24"> Salyan T/M </option>
+                                                    <option value="31"> Lerik T/M </option>
+                                                    <option value="22"> Masallı T/M </option>
+                                                    <option value="26"> İsmayıllı T/M </option>
+                                                    <option value="19"> Tovuz T/M </option>
+                                                    <option value="20"> Şəmkir T/M </option>
+                                                    <option value="35"> Ağdam T/M </option>
+                                                    <option value="54"> Füzuli T/M </option>
+                                                    <option value="38"> Kürdəmir T/M </option>
+                                                    <option value="29"> Göyçay T/M </option>
+                                                    <option value="46"> Cəlilabad T/M </option>
+                                                    <option value="47"> Şirvan T/M </option>
+                                                    <option value="53"> Bərdə T/M </option>
+                                                    <option value="61"> Goranboy T/M </option>
+                                                    <option value="56"> Qax T/M </option>
+                                                    <option value="66"> Saatlı T/M </option>
+                                                    <option value="73"> Ağsu T/M </option>
+                                                    <option value="77"> Naxçıvan T/M </option>
+                                                    <option value="74"> Beyləqan T/M </option>
+                                                    <option value="76"> Ucar T/M </option>
+                                                    <option value="85"> NZS T/M </option>
+                                                    <option value="83"> Qusar T/M </option>
+                                                    <option value="86"> 20-ci Sahə T/M </option>
+                                                    <option value="84"> Yardımlı T/M </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+                                    <div class="form-row">
+                                        <div class="col-12">
+                                            <label for="country">Olke</label>
+                                            <select id="country" style="width: 30%;" onchange="calculatePrice()"
+                                                    class="form-control ng-untouched ng-pristine ng-valid ">
+                                                <option value="USA">ABŞ</option>
+                                                <option value="TURK">Türkiyə</option>
+                                            </select>
+                                            <br>
+                                            <div class="birlesdir01211212"
+                                                 style="display: flex; width: 100% ; background-color: white;">
+                                                <label for="input">Ceki</label>
+                                                <input type="number" id="input" onkeyup="calculatePrice()"
+                                                       placeholder="Ceki kq" /><br>
+
+
+
+                                                <p id="result">$0.00</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                        </div>
+
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+            <section class="Section010101"
+                     style="width: 100%;display: flex; height: auto; background-color: rgb(255, 255, 255);">
+                <div class="SurwetliKecid container"
+                     style="width: 50%; height: auto; background-color: rgb(198, 198, 198); ;">
+
+                    <h3>Suretli Kecidler</h3>
+                    <div class="iconsuretlikecid d-flex "
+                         style="width: 100%; height: auto;justify-content: space-around; background-color: rgb(255, 255, 255); ">
+                        <div class="icons01100" style="width: 20%; height: auto; background-color: white;">
+
+                            <i class="fa-solid fa-globe"></i>
+                            <div>
+                                <p>Daxili Kargo</p>
+
+                            </div>
+                        </div>
+
+                        <div class="icons01100" style="width: 20%; height: auto;background-color: white;">
+                            <i class="fa-solid fa-box"></i>
+                            <div>
+                                <p>Ekspress Xidmet</p>
+
+                            </div>
+                        </div>
+                        <div class="icons01100" style="width: 20%; height: auto;background-color: white;">
+                            <i class="fa-solid fa-truck-fast"></i>
+                            <div>
+                                <p>Kuryer Xidmeti</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="iconsuretlikecid d-flex "
+                         style="width: 100%; height: auto;justify-content: space-around; background-color: rgb(255, 255, 255); ">
+                        <div class="icons01100" style="width: 20%; height: auto;background-color: white;">
+
+                            <i class="fa-regular fa-envelope"></i>
+                            <div>
+                                <p>Poct Xidmeti</p>
+
+                            </div>
+                        </div>
+                        <div class="icons01100" style="width: 20%; height: auto;background-color: white;">
+                            <i class="fa-brands fa-uber"></i>
+                            <div>
+                                <p>Taxi Go</p>
+
+                            </div>
+                        </div>
+                        <div class="icons01100" style="width: 20%; height: auto;background-color: white;">
+                            <i class="fa-regular fa-envelope"></i>
+                            <div>
+                                <p>Onay Kodu</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="SurwetliKecid container "
+                     style="width: 50%; height: auto; background-color: rgb(198, 198, 198);">
+
+                    <h3>Diger</h3>
+                    <div class="iconsuretlikecid d-flex "
+                         style="width: 100%; height: auto;justify-content: space-around; background-color: rgb(255, 255, 255); ">
+                        <div class="icons01100" style="width: 20%; height: auto;background-color: white;">
+
+                            <i class="fa-brands fa-shopify"></i>
+                            <div>
+                                <p>Magazalar</p>
+
+                            </div>
+                        </div>
+                        <div class="icons01100" style="width: 20%; height: auto;background-color: white;">
+                            <i class="fa-solid fa-map"></i>
+                            <div>
+                                <p>Xidmet Sebekesi</p>
+
+                            </div>
+                        </div>
+                        <div class="icons01100" style="width: 20%; height: auto;background-color: white;">
+                            <i class="fa-solid fa-layer-group"></i>
+                            <div>
+                                <p>Tarifler</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="iconsuretlikecid d-flex "
+                         style="width: 100%; height: auto;justify-content: space-around; background-color: rgb(255, 255, 255); ">
+                        <div class="icons01100" style="width: 20%; height: auto;background-color: white;">
+
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <p>Elaqe</p>
+
+                            </div>
+                        </div>
+                        <div class="icons01100" style="width: 20%; height: auto;background-color: white;">
+                            <i class="fa-solid fa-question"></i>
+                            <div>
+                                <p>Tarifler</p>
+
+                            </div>
+                        </div>
+                        <div class="icons01100" style="width: 20%; height: auto;background-color: white;">
+                            <i class="fa-solid fa-newspaper"></i>
+                            <div>
+                                <p> Xeberler</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            </section>
+
+        </div>
+        </div>
+
+    </section>
+
+    <section class="wrapppperrwdmain">
+        <div class="wrappe CheckOut">
+            <div class="container">
+                <div class="title">Checkout Form</div>
+                <div class="input-form">
+                    <div class="section-1">
+                        <div class="items">
+                            <label class="label">card number</label>
+                            <input type="text" class="input" maxlength="16" data-mask="0000 0000 0000 0000"
+                                   placeholder="1234 1234 1234 1234">
+                        </div>
+                    </div>
+                    <div class="section-2">
+                        <div class="items">
+                            <label class="label">card holder</label>
+                            <input type="text" class="input" placeholder="Coding Market">
+                        </div>
+                    </div>
+                    <div class="section-3">
+                        <div class="items">
+                            <label class="label">Expire date</label>
+                            <input type="text" class="input" data-mask="00 / 00" placeholder="MM / YY">
+                        </div>
+                        <div class="items">
+                            <div class="cvc">
+                                <label class="label">cvc code</label>
+                                <div class="tooltip">
+                                    ?
+                                    <div class="cvc-img"><img src="https://i.imgur.com/r8oXtry.png" alt=""></div>
+                                </div>
+                            </div>
+                            <input type="text" class="input" data-mask="0000" placeholder="0000">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn">proceed</div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            slidesPerView: 7,
+            centeredSlides: true,
+            paginationClickable: true,
+            loop: true,
+            spaceBetween: 30,
+            slideToClickedSlide: true
+        });
+        // !Clipboardtext
+        function selectElementContents(el) {
+            // Copy textarea, pre, div, etc.
+            if (document.body.createTextRange) {
+                // Internet Explorer
+                var textRange = document.body.createTextRange();
+                textRange.moveToElementText(el);
+                textRange.select();
+                textRange.execCommand("Copy");
+            }
+            else if (window.getSelection && document.createRange) {
+                // Non-Internet Explorer
+                var range = document.createRange();
+                range.selectNodeContents(el);
+                var sel = window.getSelection();
+                sel.removeAllRanges();
+                sel.addRange(range);
+                try {
+                    var successful = document.execCommand('copy');
+                    var msg = successful ? 'successful' : 'unsuccessful';
+                    console.log('Copy command was ' + msg);
+                }
+                catch (err) {
+                    console.log('Oops, unable to copy');
+                }
+            }
+        } // end function selectElementContents(el)
+
+        function make_copy_button(el) {
+            var copy_btn = document.createElement('input');
+            copy_btn.type = "button";
+            el.parentNode.insertBefore(copy_btn, el.nextSibling);
+            copy_btn.onclick = function () {
+                selectElementContents(el);
+            };
+
+            if (document.queryCommandSupported("copy") || parseInt(navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./)[2]) >= 42) {
+                // Copy works with Internet Explorer 4+, Chrome 42+, Firefox 41+, Opera 29+
+                copy_btn.value = "Copy to Clipboard";
+            }
+            else {
+                // Select only for Safari and older Chrome, Firefox and Opera
+                copy_btn.value = "Select All (then press Ctrl + C to Copy)";
+            }
+        }
+
+
+        // !CODEPEN
+        $(".btn").click(function () {
+            $(".input").val("");
+        });
+
+        $(".wrapppperrwdmain ").hide()
+
+        $(".priceUSAUSAUSA12").on("click", function () {
+            $(".wrapppperrwdmain ").show()
+
+            $(".wrapppperrwdmain ").css("scroll", "hidden");
+            $(".MainDashboard").css("filter", " brightness(80%) blur(5px)");
+
+        })
+
+        $(".wrapppperrwdmain").click(function () {
+            $(".MainDashboard").css("filter", "none");
+
+            $(".wrapppperrwdmain ").hide()
+        })
+        function triggerExample1() {
+            alert("Mətn kopyalandı!")
+            // get the container
+            const element = document.querySelector('#example1');
+            // Create a fake `textarea` and set the contents to the text
+            // you want to copy
+            const storage = document.createElement('textarea');
+            storage.value = element.innerHTML;
+            element.appendChild(storage);
+
+            // Copy the text in the fake `textarea` and remove the `textarea`
+            storage.select();
+            storage.setSelectionRange(0, 99999);
+            document.execCommand('copy');
+            element.removeChild(storage);
+        }
+
+
+        // !Calculater
+
+
+        function calculatePrice() {
+            const country = document.getElementById("country").value;
+            const input = document.getElementById("input");
+            const result = document.getElementById("result");
+            let price;
+            if (input.value == "") {
+                result.innerHTML = `Mohtesem Endirimle : $0`
+            }
+            if (country === "USA") {
+                price = 7.24;
+            } else if (country === "TURK") {
+                price = 3.39;
+            } else {
+                result.textContent = "";
+                return;
+            }
+
+
+            if (!isNaN(input.value) && input.value !== "") {
+                const value = parseInt(input.value);
+                const totalPrice = value * price;
+                const roundedPrice = Number.parseFloat(totalPrice).toFixed(2);
+
+                if ($(result) == "") {
+                    result.textContent = `Mohtesem Endirimle`;
+                }
+                if (country === "USA") {
+                    result.textContent = `Mohtesem Endirimle : $${roundedPrice}`;
+
+
+                }
+                else if (country === "TURK") {
+                    result.textContent = `Mohtesem Endirimle : ₺${roundedPrice}`;
+
+                }
+                if (value > 30) {
+                    result.textContent = "Max çəki: 30kq!"
+                }
+
+
+
+            } else {
+                result.textContent = "";
+            }
+
+
+
+
+        }
+
+    </script>
+
+</body>
+
+</html>

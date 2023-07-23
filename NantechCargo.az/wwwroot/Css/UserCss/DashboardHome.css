@@ -1,0 +1,343 @@
+﻿.swiper-container {
+    width: 80%;
+}
+
+.swiper-slide {
+    width: 25% !important;
+    height: 130px;
+    display: flex;
+    background: #eee;
+    align-items: center;
+    justify-content: center;
+    transition: all 200ms linear;
+    transform: scale(0.8);
+}
+
+.swiper-slide__content {
+    height: 300px;
+}
+
+.swiper-slide img {
+    cursor: pointer;
+    object-fit: contain;
+    width: 100%;
+    height: 150px;
+}
+
+.SwipperScss {
+    position: relative !important;
+    /* background-color: red; */
+    width: 100%;
+    height: auto;
+}
+
+.MainDashboard {
+    width: 100%;
+    /* height: 25vh !important; */
+    display: flex;
+}
+
+.UserInformation {
+    font-size: 25px;
+    margin-top: 2%;
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+    width: 100%;
+    /* height: 15vh !important; */
+    border-radius: 5%;
+    /* background-color: rgb(200, 255, 0); */
+}
+
+.balanceMain {
+    width: 10%;
+}
+
+    .balanceMain i {
+        font-size: 20px;
+    }
+
+.MainDashboard12 {
+    background-color: rgb(208, 208, 208);
+}
+
+.Usdbalance1 img::after {
+    display: block;
+    content: "USDasdasdasd";
+    width: 100%;
+    font-size: 200px;
+    color: red;
+    background-color: red;
+}
+
+.priceUSAUSAUSA:hover {
+    color: rgb(200, 200, 200);
+    /* background-color: aqua; */
+    cursor: pointer;
+}
+
+/* !CODEPENNNNNNNNNNNNNNNNNNNNNNNNN */
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: "Open Sans", sans-serif;
+}
+
+.wrapppperrwdmain {
+    display: none;
+    /* filter: brightness(15%) blur(5px); */
+    z-index: 10000;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+}
+
+.wrappe {
+    z-index: 10000;
+    left: 30%;
+    top: 10%;
+    position: fixed;
+}
+
+.wrapper {
+    width: 30%;
+    padding: 10px;
+}
+
+.container {
+    max-width: 500px;
+    height: auto;
+    margin: 0px auto;
+    background: #fff;
+    padding: 20px 40px 30px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: 7px solid #5f6c7d;
+}
+
+.title {
+    color: #5f6c7d;
+    font-size: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.input-form {
+    margin-bottom: 20px;
+}
+
+    .input-form .label {
+        display: block;
+        font-size: 1em;
+        color: #212121;
+        text-transform: capitalize;
+        margin-bottom: 8px;
+    }
+
+    .input-form .items {
+        margin-bottom: 20px;
+    }
+
+.section-1 .items .input,
+.section-2 .items .input,
+.section-3 .items .input {
+    background: transparent;
+    border: 2px solid #bdbdbd;
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    color: #212121;
+    border-radius: 3px;
+}
+
+.input-form .section-3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+    .input-form .section-3 .items {
+        width: 48%;
+    }
+
+.btn {
+    background: #5f6c7d;
+    color: #fff;
+    font-size: 1.25em;
+    padding: 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.cvc {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+    .cvc .tooltip {
+        color: #d4d4d4;
+        border: 2px solid #d4d4d4;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .cvc .cvc-img {
+        position: absolute;
+        top: -300%;
+        right: 0;
+        background: #5f6c7d;
+        padding: 12px;
+        border-radius: 5px;
+        display: none;
+    }
+
+        .cvc .cvc-img img {
+            width: 100px;
+            height: auto;
+            display: block;
+        }
+
+    .cvc:hover .cvc-img {
+        display: block;
+    }
+
+.mt-5 {
+    width: auto !important;
+}
+
+.col-lg-7 {
+    width: 100% !important;
+}
+
+#country {
+    width: 100% !important;
+}
+
+@media screen and (max-width: 460px) {
+    .input-form .section-3 {
+        flex-direction: column;
+    }
+
+        .input-form .section-3 .items {
+            width: 100%;
+        }
+
+    .input-form .items {
+        margin-bottom: 10px;
+    }
+
+    .input-form {
+        margin-bottom: 15px;
+    }
+
+    .title {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .externerlocation {
+        width: auto !important;
+    }
+
+    .Section010101 {
+        display: block !important;
+    }
+
+    .SurwetliKecid {
+        width: 100% !important;
+    }
+}
+
+.fa-clipboard:hover {
+    color: #8d8d8d;
+}
+
+.boxshadow01212 {
+    box-shadow: 0 5px 10px #0000000d;
+}
+
+#input {
+    display: block;
+    /* width: 100%; */
+    /* padding: 1rem 4rem;  */
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.375rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#result {
+    padding: 10px 100px;
+    /* height: 72px; */
+    border-radius: 16px;
+    background-color: #f2a900;
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.form-control {
+    padding: 10px 100px;
+}
+
+.iconsuretlikecid i {
+    margin-top: 15%;
+    color: rgb(129, 0, 129);
+    border: 1px solid black;
+    border-radius: 5%;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    font-size: 50px;
+}
+
+.iconsuretlikecid {
+    height: 40% !important;
+    margin-bottom: 10% !important;
+}
+
+.icons01100 {
+    font-size: 15px !important;
+    text-align: center;
+}
+
+.result {
+    height: 22px !important;
+    max-height: 10px;
+    display: block !important;
+}
+
+.birlesdir01211212 {
+    display: block !important;
+}
+
+.birlesdir012012 {
+    display: block !important;
+}
